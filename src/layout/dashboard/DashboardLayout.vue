@@ -33,12 +33,12 @@
             <p>Settings</p>
           </a>
         </li>
+        <log-out></log-out>
         <li class="divider"></li>
       </mobile-menu>
     </side-bar>
     <div class="main-panel">
       <top-navbar></top-navbar>
-
       <dashboard-content @click.native="toggleSidebar">
 
       </dashboard-content>
@@ -54,12 +54,15 @@ import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
+import LogOut from "../../components/LogOut.vue"
+
 export default {
   components: {
     TopNavbar,
     ContentFooter,
     DashboardContent,
-    MobileMenu
+    MobileMenu,
+    LogOut
   },
   methods: {
     toggleSidebar() {

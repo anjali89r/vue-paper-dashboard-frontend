@@ -71,16 +71,26 @@ export default {
   },
   data() {
     return {
-      chartId: "no-id"
+      chartId: "no-id",
+      chart: null,
+      $Chartist: null,
     };
   },
+  watch: {
+      chartData: {
+        deep: true,
+        handler(newValue){
+        this.chart.update(newValue)
+ }
+}
+    },
   methods: {
     /***
      * Initializes the chart by merging the chart options sent via props and the default chart options
      */
     initChart(Chartist) {
       const chartIdQuery = `#${this.chartId}`;
-      Chartist[this.chartType](
+      this.chart = Chartist[this.chartType](
         chartIdQuery,
         this.chartData,
         this.chartOptions
@@ -90,6 +100,7 @@ export default {
      * Assigns a random id to the chart
      */
     updateChartId() {
+
       const currentTime = new Date().getTime().toString();
       const randomInt = this.getRandomInt(0, currentTime);
       this.chartId = `div_${randomInt}`;

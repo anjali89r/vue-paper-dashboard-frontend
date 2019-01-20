@@ -6,7 +6,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  created() {
+    this.$store.dispatch('initCards');
+    this.$store.dispatch('initUserChart');
+    this.$store.dispatch('initActivityChart');
+    this.$store.dispatch('initPreferenceChart');
+  }
+};
 </script>
 
 <style lang="scss">
@@ -27,7 +34,6 @@ export default {};
   .list-leave-active {
     transition: transform 1s ease-out, opacity 0.4s ease-out;
   }
-
   .list-enter {
     opacity: 0;
     transform: scale(1.1);

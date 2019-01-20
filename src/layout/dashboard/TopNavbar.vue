@@ -37,12 +37,17 @@
               </p>
             </a>
           </li>
+          <log-out></log-out>
         </ul>
       </div>
     </div></nav>
 </template>
 <script>
+import LogOut from "../../components/LogOut.vue"
 export default {
+  components: {
+    LogOut
+  },
   computed: {
     routeName() {
       const { name } = this.$route;

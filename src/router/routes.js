@@ -10,6 +10,7 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
+import SignIn from "@/pages/SignIn.vue";
 
 const routes = [
   {
@@ -52,7 +53,15 @@ const routes = [
         name: "table-list",
         component: TableList
       }
-    ]
+    ],
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/signin",
+    name: "signin",
+    component: SignIn
   },
   { path: "*", component: NotFound }
 ];
