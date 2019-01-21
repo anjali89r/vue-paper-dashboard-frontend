@@ -13,6 +13,7 @@
                   <span>Don't have an account? <a href="#">Sign up</a></span>
                </div>
                <div class="form-section">
+                  <span class="leaf"><img src="../assets/img/plants-left.svg" width="80px" alt="leaf"/></span>
                   <h3>Sign in to DataCue</h3>
                   <form @submit.prevent="signIn">
                      <div class="form-group">
@@ -27,6 +28,7 @@
                         <span class="field-icon toggle-password mobile" @click="showPw"><i class="fa fa-fw fa-eye"></i> Show password</span>
                      </div>
                      <button type="submit" class="btn btn-sm btn-warning textcase">Login</button>
+                     <span class="leaf right-leaf"><img src="../assets/img/plants-right.svg" width="80px" alt="leaf"/></span>
                   </form>
                   <div class="alert alert-danger" role="alert" v-if="logError">
                         Invalid username or password.
@@ -91,7 +93,19 @@ export default {
 .account-signup{
    text-align: center;
 }
+.right-leaf{
+   float: right;
+}
+@media (max-width: 767px) {
+   .leaf {
+      display: none;
+   }
+
+}
 @media (min-width: 768px) {
+   .form-section>h3{
+      margin:-30px 0 10px;
+   }
    .signin-drawer{
       height: 100vh;
       background-position: 50%;
@@ -104,6 +118,7 @@ export default {
    text-align: right;
 }
 }
+
 .signin-drawer-content{
    padding: 2em;
    text-align: center;
@@ -142,4 +157,5 @@ export default {
       display: none
    }
 }
+
 </style>
